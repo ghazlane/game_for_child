@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SignUp.playerDataBase = Room.databaseBuilder(getApplicationContext(), PlayerDataBase.class,
-                                "etablissement_bd").allowMainThreadQueries().build() ;
+                                "player_bd").allowMainThreadQueries().build() ;
                 List<Player> listePlayerDataBase = SignUp.playerDataBase.playerDao().getAllPlayer();
                 PlayerAdapter.listPlayer= new ArrayList<>();
               //  PlayerAdapter.listPlayer.add(new Player("mohamme",1, "mohammed0",4 ));

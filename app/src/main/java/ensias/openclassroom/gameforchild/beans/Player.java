@@ -9,7 +9,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "players")
+@Entity(tableName = "player")
 public class Player {
     //autoGenerate
     @PrimaryKey(autoGenerate=true)

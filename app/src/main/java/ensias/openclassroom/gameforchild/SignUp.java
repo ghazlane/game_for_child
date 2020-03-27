@@ -66,7 +66,6 @@ public class SignUp extends AppCompatActivity  {
                     player.setNom(namekids.getText().toString());
                     player.setLevel(1);
                     player.setScore(0);
-                    player.setId(44);
                     SignUp.playerDataBase =  Room.databaseBuilder(getApplicationContext(),PlayerDataBase.class,
                             "player_bd").allowMainThreadQueries().build() ;
                     SignUp.playerDataBase.playerDao().addPlayer(player);

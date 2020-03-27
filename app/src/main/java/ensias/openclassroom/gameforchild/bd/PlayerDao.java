@@ -17,7 +17,7 @@ public interface PlayerDao {
     public void addPlayer(Player player);
     /*@Query("select * from players where login = :login")
     public List<User> getUser(String login);*/
-    @Query("select * from players")
+    @Query("select * from player")
     public List<Player> getAllPlayer();
     @Delete
     public void deletePlayer(Player player);
