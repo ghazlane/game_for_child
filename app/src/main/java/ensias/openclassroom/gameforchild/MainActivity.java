@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-     //   Intent intent = new Intent(this, SingIn.class);
         signIn = this.findViewById(R.id.sin);
         signUp = this.findViewById(R.id.signup);
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("iteration *****************************************");
                     PlayerAdapter.listPlayer.add(listePlayerDataBase.get(i)) ;
                 }
-
                 System.out.println("fin iteration *****************************************");
                 Intent intent = new Intent(v.getContext(), ListAccount.class);
                 startActivity(intent);

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.net.Uri;
 import android.nfc.Tag;
@@ -18,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,14 +39,12 @@ public class SignUp extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
         imageUpload = this.findViewById(R.id.imageUpload);
         buttonUploadImage = this.findViewById(R.id.buttonUploadImage);
         addNewAccount = this.findViewById(R.id.addNewAccount);
         namekids = this.findViewById(R.id.namekids);
         playerDataBase =  Room.databaseBuilder(getApplicationContext(),PlayerDataBase.class,
                 "player_bd").allowMainThreadQueries().build() ;
-
         imageUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +67,14 @@ public class SignUp extends AppCompatActivity  {
                     player.setNom(namekids.getText().toString());
                     player.setLevel(1);
                     player.setScore(0);
+                    //traitement sur image
+                    BitmapDrawable drawable = (BitmapDrawable) imageUpload.getDrawable();
+                    Bitmap bmap = drawable.getBitmap();
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    bmap.compress(Bitmap.CompressFormat.PNG,100,bos);
+                    byte[] imageOnByte = bos.toByteArray();
+                    player.setImage_profil(imageOnByte);
+                    //fin traitement image
                     SignUp.playerDataBase =  Room.databaseBuilder(getApplicationContext(),PlayerDataBase.class,
                             "player_bd").allowMainThreadQueries().build() ;
                     SignUp.playerDataBase.playerDao().addPlayer(player);

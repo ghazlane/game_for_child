@@ -23,8 +23,9 @@ public class Player {
     private String date_creation ;
     @ColumnInfo(name = "score")
     private int score ;
-    @ColumnInfo(name="imgae_profil")
-    private String image_profil ;
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+    private byte[] image_profil ;
+
 
     public Player(){
         super();
@@ -37,7 +38,7 @@ public class Player {
         this.score = score;
     }
 
-    public Player(int id, String nom, int level, String date_creation, int score, String image_profil) {
+    public Player(int id, String nom, int level, String date_creation, int score, byte[] image_profil) {
         this.id = id;
         this.nom = nom;
         this.level = level;
@@ -86,11 +87,11 @@ public class Player {
         this.score = score;
     }
 
-    public String getImage_profil() {
+    public byte[] getImage_profil() {
         return image_profil;
     }
 
-    public void setImage_profil(String image_profil) {
+    public void setImage_profil(byte[] image_profil) {
         this.image_profil = image_profil;
     }
 }
