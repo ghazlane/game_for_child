@@ -11,9 +11,10 @@ public class HomeSession extends AppCompatActivity {
     private TextView messageWelcome ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        messageWelcome = findViewById(R.id.messageWelcome);
-        messageWelcome.setText("Welcome "+ Session.getPlayer().getNom());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_session);
+        messageWelcome = findViewById(R.id.messageWelcome);
+        messageWelcome.setText("Welcome "+ Session.getPlayer().getNom());
     }
+    
 }
