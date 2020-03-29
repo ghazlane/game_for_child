@@ -26,7 +26,8 @@ public class HomeSession extends AppCompatActivity {
         choix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("************************************ On click");
+               // System.out.println("************************************ On click");
+                TraitementChoix1();
             }
         });
         choix2.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,10 @@ public class HomeSession extends AppCompatActivity {
                 System.out.println("************************************ choix3");
             }
         });
+    }
+
+    public void TraitementChoix1(){
+
     }
 
 }
