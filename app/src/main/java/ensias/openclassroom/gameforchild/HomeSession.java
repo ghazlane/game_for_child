@@ -2,6 +2,7 @@ package ensias.openclassroom.gameforchild;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -26,7 +27,6 @@ public class HomeSession extends AppCompatActivity {
         choix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // System.out.println("************************************ On click");
                 TraitementChoix1();
             }
         });
@@ -45,7 +45,8 @@ public class HomeSession extends AppCompatActivity {
     }
 
     public void TraitementChoix1(){
-
+        Intent intent = new Intent(this, ListLevel.class);
+        startActivity(intent);
     }
 
 }
