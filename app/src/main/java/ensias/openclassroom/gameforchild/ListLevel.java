@@ -35,8 +35,9 @@ public class ListLevel extends AppCompatActivity {
             int resID = res.getIdentifier(nameLevel , "drawable", getPackageName());
             Drawable drawable = res.getDrawable(resID );
             listeImageView.get(i).setImageDrawable(drawable);
-            listeImageView.get(i).getLayoutParams().height = 200 ;
-            listeImageView.get(i).getLayoutParams().width = 200 ;
+            listeImageView.get(i).getLayoutParams().height = 150 ;
+            listeImageView.get(i).getLayoutParams().width = 150 ;
+            //listeImageView.get(i).getLayoutParams().
             /*
             int resID = getResources().getIdentifier(nameLevel, "id", getPackageName());
             mImageView.setImageResource(getResources().getDrawable());*/
@@ -48,6 +49,13 @@ public class ListLevel extends AppCompatActivity {
         Drawable drawable = res.getDrawable(resID );
         listeImageView.get(Session.getPlayer().getLevel()-1).setImageDrawable(drawable);
 
+        listeImageView.get(Session.getPlayer().getLevel()-1).getLayoutParams().height = 150 ;
+        listeImageView.get(Session.getPlayer().getLevel()-1).getLayoutParams().width = 150 ;
+
+        for(int i = Session.getPlayer().getLevel() ; i< 20; i++){
+            listeImageView.get(i).getLayoutParams().height = 150 ;
+            listeImageView.get(i).getLayoutParams().width = 150 ;
+        }
 
 
     }
