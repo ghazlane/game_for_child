@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -27,7 +28,6 @@ public class ListLevel extends AppCompatActivity {
             listeImageView.add((ImageView) findViewById(resID));
         }
 
-        System.out.println("***************************** Session.getPlayer().getLevel() = "+ Session.getPlayer().getLevel());
 
         for(int i = 0 ; i<Session.getPlayer().getLevel()-1 ; i++){
             String nameLevel = "sucess_"+(i+1);
@@ -37,6 +37,12 @@ public class ListLevel extends AppCompatActivity {
             listeImageView.get(i).setImageDrawable(drawable);
             listeImageView.get(i).getLayoutParams().height = 150 ;
             listeImageView.get(i).getLayoutParams().width = 150 ;
+            listeImageView.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
             //listeImageView.get(i).getLayoutParams().
             /*
             int resID = getResources().getIdentifier(nameLevel, "id", getPackageName());
@@ -57,7 +63,11 @@ public class ListLevel extends AppCompatActivity {
             listeImageView.get(i).getLayoutParams().width = 150 ;
         }
 
+        initialisationLevel();
+    }
 
+    private void initialisationLevel(){
+        
     }
 
 }
