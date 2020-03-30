@@ -19,6 +19,9 @@ public class Levels extends AppCompatActivity {
 
     private static ArrayList<Level> listLevel ;
 
+    public Levels() {
+    }
+
     public static ArrayList<Level> getListLevel() {
         return listLevel;
     }
