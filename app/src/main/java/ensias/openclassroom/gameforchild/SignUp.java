@@ -65,7 +65,7 @@ public class SignUp extends AppCompatActivity  {
                     Player player = new Player();
                     player.setDate_creation((new SimpleDateFormat("yyyy/MM/dd")).format(new Date()));
                     player.setNom(namekids.getText().toString());
-                    player.setLevel(1);
+                    player.setLevel(14);
                     player.setScore(0);
                     //traitement sur image
                     BitmapDrawable drawable = (BitmapDrawable) imageUpload.getDrawable();
