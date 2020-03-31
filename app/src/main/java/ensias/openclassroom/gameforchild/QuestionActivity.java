@@ -37,15 +37,15 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse1.setBackgroundColor(Color.GREEN);
+                    choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
                 }else{
-                    choixReponse1.setBackgroundColor(Color.RED);
+                    choixReponse1.setBackgroundColor(Color.parseColor("#e11a1a"));
                     if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse2.setBackgroundColor(Color.GREEN);
+                        choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse3.setBackgroundColor(Color.GREEN);
+                        choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse4.setBackgroundColor(Color.GREEN);
+                        choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
                     }
                 }
             }
@@ -55,15 +55,15 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse2.setBackgroundColor(Color.GREEN);
+                    choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
                 }else{
-                    choixReponse2.setBackgroundColor(Color.RED);
+                    choixReponse2.setBackgroundColor(Color.parseColor("#e11a1a"));
                     if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse1.setBackgroundColor(Color.GREEN);
+                        choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse3.setBackgroundColor(Color.GREEN);
+                        choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse4.setBackgroundColor(Color.GREEN);
+                        choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
                     }
                 }
             }
@@ -73,15 +73,15 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse3.setBackgroundColor(Color.GREEN);
+                    choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
                 }else{
-                    choixReponse3.setBackgroundColor(Color.RED);
+                    choixReponse3.setBackgroundColor(Color.parseColor("#e11a1a"));
                     if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse2.setBackgroundColor(Color.GREEN);
+                        choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse1.setBackgroundColor(Color.GREEN);
+                        choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse4.setBackgroundColor(Color.GREEN);
+                        choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
                     }
                 }
             }
@@ -91,15 +91,15 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse4.setBackgroundColor(Color.GREEN);
+                    choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
                 }else{
-                    choixReponse4.setBackgroundColor(Color.RED);
+                    choixReponse4.setBackgroundColor(Color.parseColor("#e11a1a"));
                     if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse2.setBackgroundColor(Color.GREEN);
+                        choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse3.setBackgroundColor(Color.GREEN);
+                        choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
                     }else if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse1.setBackgroundColor(Color.GREEN);
+                        choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
                     }
                 }
             }

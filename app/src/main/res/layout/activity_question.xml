@@ -14,7 +14,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="4"
         android:textColor="@color/colorPrimary"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
@@ -30,7 +30,7 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPresuqeBlack"
         android:background="@android:color/white"
         android:textSize="20sp"
         android:text="Answer1"/>
@@ -41,7 +41,7 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPresuqeBlack"
         android:background="@android:color/white"
         android:textSize="20sp"
         android:text="Answer2"/>
@@ -52,7 +52,7 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPresuqeBlack"
         android:background="@android:color/white"
         android:textSize="20sp"
         android:text="Answer3"/>
@@ -63,9 +63,21 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPresuqeBlack"
         android:background="@android:color/white"
         android:textSize="20sp"
         android:text="Answer4"/>
+
+        <ImageView
+            android:id="@+id/suivant"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorPresuqeBlack"
+            android:textSize="20sp"
+            android:src="@drawable/next"
+            />
+        
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
