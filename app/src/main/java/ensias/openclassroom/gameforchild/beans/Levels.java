@@ -5,19 +5,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import androidx.fragment.app.Fragment;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
 public class Levels extends AppCompatActivity {
 
     private static ArrayList<Level> listLevel ;
+    private static int numLevels ;
+    private static int numQuestion ;
 
     public Levels() {
     }
@@ -30,4 +23,19 @@ public class Levels extends AppCompatActivity {
         Levels.listLevel = listLevel;
     }
 
+    public static int getNumLevels() {
+        return numLevels;
+    }
+
+    public static void setNumLevels(int numLevels) {
+        Levels.numLevels = numLevels;
+    }
+
+    public static int getNumQuestion() {
+        return numQuestion;
+    }
+
+    public static void setNumQuestion(int numQuestion) {
+        Levels.numQuestion = numQuestion;
+    }
 }

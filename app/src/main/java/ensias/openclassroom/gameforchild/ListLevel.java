@@ -2,6 +2,7 @@ package ensias.openclassroom.gameforchild;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -42,10 +43,14 @@ public class ListLevel extends AppCompatActivity {
             listeImageView.get(i).setImageDrawable(drawable);
             listeImageView.get(i).getLayoutParams().height = 150 ;
             listeImageView.get(i).getLayoutParams().width = 150 ;
+            final int finalI = i;
             listeImageView.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Levels.setNumLevels(finalI +1);
+                    Levels.setNumQuestion(1);
+                    Intent intent = new Intent(v.getContext(), QuestionActivity.class);
+                    startActivity(intent);
                 }
             });
             //listeImageView.get(i).getLayoutParams().
@@ -97,6 +102,8 @@ public class ListLevel extends AppCompatActivity {
         ArrayList<Level> listeLevel = new ArrayList<>();
         listeLevel.add(new Level(listeQuestion));
         Levels.setListLevel(listeLevel);
+
+
     }
 
 }
