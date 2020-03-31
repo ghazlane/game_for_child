@@ -47,7 +47,7 @@ public class ListLevel extends AppCompatActivity {
             listeImageView.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Levels.setNumLevels(finalI +1);
+                    Levels.setNumLevels(finalI);
                     Levels.setNumQuestion(1);
                     Intent intent = new Intent(v.getContext(), QuestionActivity.class);
                     startActivity(intent);
