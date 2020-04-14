@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PictureCamera">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imagePicture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"></ImageView>
+
+        <Button
+            android:id="@+id/reponsechoix1_picture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorPresuqeBlack"
+            android:background="@android:color/white"
+            android:textSize="20sp"
+            android:text="Answer1"/>
+
+        <Button
+            android:id="@+id/reponsechoix2_picture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorPresuqeBlack"
+            android:background="@android:color/white"
+            android:textSize="20sp"
+            android:text="Answer2"/>
+
+        <Button
+            android:id="@+id/reponsechoix3_picture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorPresuqeBlack"
+            android:background="@android:color/white"
+            android:textSize="20sp"
+            android:text="Answer3"/>
+
+        <Button
+            android:id="@+id/reponsechoix4_picture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorPresuqeBlack"
+            android:background="@android:color/white"
+            android:textSize="20sp"
+            android:text="Answer4"/>
+
+        <Button
+            android:id="@+id/suivant"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorPresuqeBlack"
+            android:textSize="20sp"
+            android:text="Valider réponse"
+
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

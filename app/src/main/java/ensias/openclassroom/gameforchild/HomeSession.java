@@ -20,6 +20,7 @@ public class HomeSession extends Activity {
     private LinearLayout choix1;
     private LinearLayout choix2;
     private LinearLayout choix3;
+    private ImageView imageView;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     @Override
@@ -69,11 +70,10 @@ public class HomeSession extends Activity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            Intent intent = new Intent(this, ListLevel.class);
+            Intent intent = new Intent(this, PictureCamera.class);
             startActivity(intent);
-/*            ImageView imageView;
-            imageView = findViewById(R.id.imageView);
-            imageView.setImageBitmap(imageBitmap);*/
+            imageView = (ImageView) findViewById(R.id.imagePicture);
+            imageView.setImageBitmap(imageBitmap);
         }
     }
 
