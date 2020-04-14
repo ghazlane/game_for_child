@@ -2,19 +2,26 @@ package ensias.openclassroom.gameforchild;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import ensias.openclassroom.gameforchild.beans.Question;
 import ensias.openclassroom.gameforchild.beans.Session;
 
-public class HomeSession extends AppCompatActivity {
+public class HomeSession extends Activity {
     private TextView messageWelcome ;
     private LinearLayout choix1;
     private LinearLayout choix2;
     private LinearLayout choix3;
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +40,9 @@ public class HomeSession extends AppCompatActivity {
         choix2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("************************************ choix2");
+                TraitementChoix2();
             }
+
         });
         choix3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,5 +56,27 @@ public class HomeSession extends AppCompatActivity {
         Intent intent = new Intent(this, ListLevel.class);
         startActivity(intent);
     }
+
+    public void TraitementChoix2(){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            Intent intent = new Intent(this, ListLevel.class);
+            startActivity(intent);
+/*            ImageView imageView;
+            imageView = findViewById(R.id.imageView);
+            imageView.setImageBitmap(imageBitmap);*/
+        }
+    }
+
+
 
 }

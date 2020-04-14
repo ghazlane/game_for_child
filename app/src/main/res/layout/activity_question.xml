@@ -78,6 +78,5 @@
             android:textSize="20sp"
             android:src="@drawable/next"
             />
-        
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
