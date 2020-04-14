@@ -15,12 +15,11 @@ import android.widget.TextView;
 import ensias.openclassroom.gameforchild.beans.Question;
 import ensias.openclassroom.gameforchild.beans.Session;
 
-public class HomeSession extends Activity {
+public class HomeSession extends Activity  {
     private TextView messageWelcome ;
     private LinearLayout choix1;
     private LinearLayout choix2;
     private LinearLayout choix3;
-    private ImageView imageView;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     @Override
@@ -72,10 +71,16 @@ public class HomeSession extends Activity {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             Intent intent = new Intent(this, PictureCamera.class);
             startActivity(intent);
-            imageView = (ImageView) findViewById(R.id.imagePicture);
-            imageView.setImageBitmap(imageBitmap);
+
+            System.out.println("**************************************************************"+imageBitmap);
+            PictureCamera.PICTURE_BITMAP = imageBitmap ;
+            // imageView.setImageBitmap(imageBitmap);
+           // imageView.setImageResource(R.drawable.level1_ballon);
+          // imageView.setImageBitmap(imageBitmap);
         }
     }
+
+
 
 
 
