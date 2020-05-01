@@ -145,4 +145,12 @@ public class QuestionActivity extends AppCompatActivity {
     public void augmenterScore(){
         score_level+=10;
     }
+
+    public static int getScore_level() {
+        return score_level;
+    }
+
+    public static void setScore_level(int score_level) {
+        QuestionActivity.score_level = score_level;
+    }
 }

@@ -4,6 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundkids"
     tools:context=".ResultatLevel">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Level"
+                android:textSize="35dp"
+                android:layout_marginTop="100dp"
+                android:textColor="#e92f71"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:id="@+id/messageWelcome"
+                />
+
+            <LinearLayout
+                android:id="@+id/choix1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/color_choix"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="230dp"
+                >
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/angle2"
+                        />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/objects"
+                        android:paddingLeft="3dp"
+                        android:layout_gravity="center"
+                        />
+                </FrameLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/choix1Text"
+                    android:text="My levels"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choix2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/color_choix"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="360dp"
+                android:layout_gravity="center_horizontal"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/score_level"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="70dp"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/choix12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="630dp"
+                >
+            <ImageView
+                android:id="@+id/suivant"
+                android:layout_width="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorPresuqeBlack"
+                android:textSize="20sp"
+                android:src="@drawable/next"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
