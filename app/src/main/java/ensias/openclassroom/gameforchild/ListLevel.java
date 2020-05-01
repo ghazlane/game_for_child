@@ -82,12 +82,12 @@ public class ListLevel extends AppCompatActivity {
         Question question2 = new Question((int) R.drawable.level1_cahier,"Netbook",new ArrayList() {{ add("Bike"); add("Netbook"); add("cat"); add("Sun"); }});
         Question question3 = new Question((int) R.drawable.level1_chat,"Cat",new ArrayList() {{ add("Cat"); add("Netbook"); add("Clock"); add("Bike"); }});
         Question question4 = new Question((int) R.drawable.level1_chien,"Dog",new ArrayList() {{ add("Bike"); add("Netbook"); add("Dog"); add("Sun"); }});
-        Question question5 = new Question((int) R.drawable.level1_couleur_rouge,"Color red",new ArrayList() {{ add("Color blue"); add("Color yellow"); add("Color green"); add("Sun"); }});
+        Question question5 = new Question((int) R.drawable.level1_couleur_rouge,"Color red",new ArrayList() {{ add("Color red"); add("Color yellow"); add("Color green"); add("Sun"); }});
         Question question6 = new Question((int) R.drawable.level1_horloge,"Clock",new ArrayList() {{ add("Bike"); add("Netbook"); add("cat"); add("Clock"); }});
         Question question7 = new Question((int) R.drawable.level1_soliel,"Sun",new ArrayList() {{ add("Pen"); add("Clock"); add("Sun"); add("Bike"); }});
         Question question8 = new Question((int) R.drawable.level1_stylo,"Pen",new ArrayList() {{ add("Pen"); add("Netbook"); add("Dog"); add("Sun"); }});
         Question question9 = new Question((int) R.drawable.level1_velo,"Bike",new ArrayList() {{ add("Ball"); add("Bike"); add("Clock"); add("Sun"); }});
-        Question question10 = new Question((int) R.drawable.level1_cahier,"Car",new ArrayList() {{ add("Cat"); add("Netbook"); add("Car"); add("Sun"); }});
+        Question question10 = new Question((int) R.drawable.level1_voiture,"Car",new ArrayList() {{ add("Cat"); add("Netbook"); add("Car"); add("Sun"); }});
         ArrayList<Question> listeQuestion = new ArrayList<>();
         listeQuestion.add(question1);
         listeQuestion.add(question2);
