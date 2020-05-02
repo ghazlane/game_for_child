@@ -8,11 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import ensias.openclassroom.gameforchild.beans.Level;
 import ensias.openclassroom.gameforchild.beans.Levels;
 import ensias.openclassroom.gameforchild.beans.Question;
@@ -67,6 +63,16 @@ public class ListLevel extends AppCompatActivity {
 
         listeImageView.get(Session.getPlayer().getLevel()-1).getLayoutParams().height = 150 ;
         listeImageView.get(Session.getPlayer().getLevel()-1).getLayoutParams().width = 150 ;
+
+        listeImageView.get(Session.getPlayer().getLevel()-1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Levels.setNumLevels(Session.getPlayer().getLevel()-1);
+                Levels.setNumQuestion(0);
+                Intent intent = new Intent(v.getContext(), QuestionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         for(int i = Session.getPlayer().getLevel() ; i< 20; i++){
             listeImageView.get(i).getLayoutParams().height = 150 ;

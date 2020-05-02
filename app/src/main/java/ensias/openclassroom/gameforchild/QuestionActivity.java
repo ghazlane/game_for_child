@@ -1,6 +1,7 @@
 package ensias.openclassroom.gameforchild;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -11,8 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import ensias.openclassroom.gameforchild.bd.PlayerDataBase;
 import ensias.openclassroom.gameforchild.beans.Level;
 import ensias.openclassroom.gameforchild.beans.Levels;
+import ensias.openclassroom.gameforchild.beans.Player;
+import ensias.openclassroom.gameforchild.beans.Session;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -20,6 +24,7 @@ public class QuestionActivity extends AppCompatActivity {
     Button choixReponse1,choixReponse2,choixReponse3,choixReponse4 ;
     public static int score_level = 0 ;
     public boolean response_person ;
+    public static PlayerDataBase playerDataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +76,7 @@ public class QuestionActivity extends AppCompatActivity {
                     response_person = true ;
                     if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
                         choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
+                        augmenterScore();
                     } else {
                         choixReponse2.setBackgroundColor(Color.parseColor("#e11a1a"));
                         if (choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
@@ -93,6 +99,7 @@ public class QuestionActivity extends AppCompatActivity {
                     response_person = true ;
                     if (choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
                         choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
+                        augmenterScore();
                     } else {
                         choixReponse3.setBackgroundColor(Color.parseColor("#e11a1a"));
                         if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
@@ -115,6 +122,7 @@ public class QuestionActivity extends AppCompatActivity {
                     response_person = true ;
                     if (choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
                         choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                        augmenterScore();
                     } else {
                         choixReponse4.setBackgroundColor(Color.parseColor("#e11a1a"));
                         if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
@@ -153,6 +161,19 @@ public class QuestionActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            if(QuestionActivity.score_level >= 60 ){
+
+                System.out.println("Avant ********************************"+Session.getPlayer().getLevel());
+                //admis mettre ajours la table
+                int id = Session.getPlayer().getId();
+                QuestionActivity.playerDataBase =  Room.databaseBuilder(getApplicationContext(),PlayerDataBase.class,
+                        "player_bd").allowMainThreadQueries().build() ;
+                if((Levels.getNumLevels())==(Session.getPlayer().getLevel()-1)){
+                QuestionActivity.playerDataBase.playerDao().updatePlayer(id,Session.getPlayer().getLevel()+1);
+                    Session.getPlayer().setLevel(Session.getPlayer().getLevel()+1);
+                }
+                System.out.println("Apres ********************************"+Session.getPlayer().getLevel());
+            }
         }
     }
 

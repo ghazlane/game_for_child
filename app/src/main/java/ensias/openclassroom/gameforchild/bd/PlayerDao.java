@@ -21,6 +21,6 @@ public interface PlayerDao {
     public List<Player> getAllPlayer();
     @Delete
     public void deletePlayer(Player player);
- /*   @Update
-    public void updatePlayer(Player player);*/
+    @Query("UPDATE player SET level = :level WHERE id = :id")
+    int updatePlayer(int id, int level);
 }
