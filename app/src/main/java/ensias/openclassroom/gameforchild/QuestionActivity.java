@@ -19,6 +19,8 @@ public class QuestionActivity extends AppCompatActivity {
     ImageView image,suivant ;
     Button choixReponse1,choixReponse2,choixReponse3,choixReponse4 ;
     public static int score_level = 0 ;
+    public boolean response_person ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,81 +39,93 @@ public class QuestionActivity extends AppCompatActivity {
         choixReponse2.setText(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getListChoix().get(1));
         choixReponse3.setText(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getListChoix().get(2));
         choixReponse4.setText(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getListChoix().get(3));
-
+        response_person = false ;
         choixReponse1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
-                    augmenterScore();
-                }else{
-                    choixReponse1.setBackgroundColor(Color.parseColor("#e11a1a"));
-                    if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                if(!response_person) {
+                    response_person = true ;
+                    if (choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                        choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
+                        augmenterScore();
+                    } else {
+                        choixReponse1.setBackgroundColor(Color.parseColor("#e11a1a"));
+                        if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                        }
                     }
+                    lancerButtonNext();
                 }
-                lancerButtonNext();
             }
         });
 
         choixReponse2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
-                }else{
-                    choixReponse2.setBackgroundColor(Color.parseColor("#e11a1a"));
-                    if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                response_person = true ;
+                if(!response_person) {
+                    if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                        choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
+                    } else {
+                        choixReponse2.setBackgroundColor(Color.parseColor("#e11a1a"));
+                        if (choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                        }
                     }
+                    lancerButtonNext();
                 }
-                lancerButtonNext();
             }
         });
 
         choixReponse3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
-                }else{
-                    choixReponse3.setBackgroundColor(Color.parseColor("#e11a1a"));
-                    if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                if(!response_person) {
+                    response_person = true ;
+                    if (choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                        choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
+                    } else {
+                        choixReponse3.setBackgroundColor(Color.parseColor("#e11a1a"));
+                        if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                        }
                     }
+                    lancerButtonNext();
                 }
-                lancerButtonNext();
             }
         });
 
         choixReponse4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                    choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
-                }else{
-                    choixReponse4.setBackgroundColor(Color.parseColor("#e11a1a"));
-                    if(choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
-                    }else if(choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())){
-                        choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
+                if(!response_person) {
+                    response_person = true ;
+                    if (choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                        choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
+                    } else {
+                        choixReponse4.setBackgroundColor(Color.parseColor("#e11a1a"));
+                        if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
+                        } else if (choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
+                            choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
+                        }
                     }
+                    lancerButtonNext();
                 }
-                lancerButtonNext();
             }
         });
 
@@ -119,7 +133,6 @@ public class QuestionActivity extends AppCompatActivity {
 
     public void lancerButtonNext(){
         if(Levels.getNumQuestion() < 9) {
-            System.out.println("****************************"+Levels.getNumQuestion());
             suivant.setImageResource(R.drawable.next);
             Levels.setNumQuestion(Levels.getNumQuestion() + 1);
             suivant.setOnClickListener(new View.OnClickListener() {

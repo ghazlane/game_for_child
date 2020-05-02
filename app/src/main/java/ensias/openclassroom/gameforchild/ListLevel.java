@@ -154,6 +154,31 @@ public class ListLevel extends AppCompatActivity {
         listeLevel.add(new Level(listeQuestion3));
         Levels.setListLevel(listeLevel);
 
+        // level 3
+        Question question4_1 = new Question((int) R.drawable.candle,"Candle",new ArrayList() {{ add("Candle"); add("Airplane"); add("Chair"); add("Shoe"); }});
+        Question question4_2 = new Question((int) R.drawable.chair,"Chair",new ArrayList() {{ add("Backpack"); add("Candle"); add("Chair"); add("Chair"); }});
+        Question question4_3 = new Question((int) R.drawable.comb,"Comb",new ArrayList() {{ add("Table"); add("Comb"); add("Glass"); add("Bike"); }});
+        Question question4_4 = new Question((int) R.drawable.shoe,"Shoe",new ArrayList() {{ add("Moon"); add("Shoe"); add("Candle"); add("Miror"); }});
+        Question question4_5 = new Question((int) R.drawable.silver,"Silver",new ArrayList() {{ add("Silver"); add("Shoe"); add("Key"); add("Miror"); }});
+        Question question4_6 = new Question((int) R.drawable.key,"Key",new ArrayList() {{ add("Bike"); add("Key"); add("Silver"); add("Clock"); }});
+        Question question4_7 = new Question((int) R.drawable.miror,"Miror",new ArrayList() {{ add("Key"); add("Table"); add("Miror"); add("Moon"); }});
+        Question question4_8 = new Question((int) R.drawable.ship,"Ship",new ArrayList() {{ add("Ship"); add("Table"); add("Television"); add("Sun"); }});
+        Question question4_9 = new Question((int) R.drawable.giraffe,"Giraffe",new ArrayList() {{ add("Shoe"); add("Table"); add("Silver"); add("Key"); }});
+        Question question4_10 =new Question((int) R.drawable.shirt,"Shirt",new ArrayList() {{ add("Glass"); add("Shirt"); add("Table"); add("Shoe"); }});
+        ArrayList<Question> listeQuestion4 = new ArrayList<>();
+        listeQuestion4.add(question4_1);
+        listeQuestion4.add(question4_2);
+        listeQuestion4.add(question4_3);
+        listeQuestion4.add(question4_4);
+        listeQuestion4.add(question4_5);
+        listeQuestion4.add(question4_6);
+        listeQuestion4.add(question4_7);
+        listeQuestion4.add(question4_8);
+        listeQuestion4.add(question4_9);
+        listeQuestion4.add(question4_10);
+        listeLevel.add(new Level(listeQuestion3));
+        Levels.setListLevel(listeLevel);
+
 
 
 
