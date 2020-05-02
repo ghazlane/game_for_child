@@ -43,7 +43,7 @@ public class QuestionActivity extends AppCompatActivity {
         choixReponse1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!response_person) {
+                if(response_person == false) {
                     response_person = true ;
                     if (choixReponse1.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
                         choixReponse1.setBackgroundColor(Color.parseColor("#00B83B"));
@@ -66,8 +66,9 @@ public class QuestionActivity extends AppCompatActivity {
         choixReponse2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                response_person = true ;
-                if(!response_person) {
+
+                if(response_person == false) {
+                    response_person = true ;
                     if (choixReponse2.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
                         choixReponse2.setBackgroundColor(Color.parseColor("#00B83B"));
                     } else {
@@ -88,7 +89,7 @@ public class QuestionActivity extends AppCompatActivity {
         choixReponse3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!response_person) {
+                if(response_person == false) {
                     response_person = true ;
                     if (choixReponse3.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
                         choixReponse3.setBackgroundColor(Color.parseColor("#00B83B"));
@@ -110,7 +111,7 @@ public class QuestionActivity extends AppCompatActivity {
         choixReponse4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!response_person) {
+                if(response_person == false) {
                     response_person = true ;
                     if (choixReponse4.getText().equals(Levels.getListLevel().get(Levels.getNumLevels()).getListQuestion().get(Levels.getNumQuestion()).getReponse())) {
                         choixReponse4.setBackgroundColor(Color.parseColor("#00B83B"));
