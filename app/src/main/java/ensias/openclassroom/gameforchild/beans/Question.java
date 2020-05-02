@@ -3,7 +3,7 @@ package ensias.openclassroom.gameforchild.beans;
 import java.util.ArrayList;
 
 public class Question {
-    private int IdImageDrawable ;
+    private int IdImageDrawable;
     private String reponse;
     private ArrayList<String> listChoix;
 
@@ -20,7 +20,6 @@ public class Question {
     public void setIdImageDrawable(int idImageDrawable) {
         IdImageDrawable = idImageDrawable;
     }
-
 
 
     public String getReponse() {

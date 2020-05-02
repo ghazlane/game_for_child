@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -20,8 +21,8 @@ import ensias.openclassroom.gameforchild.beans.Session;
 
 public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.MyViewHolder> {
     public static ArrayList<Player> listPlayer = new ArrayList();
-    public static Context parent2 ;
-   // public static Context parent2 ;
+    public static Context parent2;
+    // public static Context parent2 ;
 
     @Override
     // retournele nb total de cellule que contiendra la liste
@@ -40,7 +41,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Player player= (Player) listPlayer.get(position);
+        Player player = (Player) listPlayer.get(position);
         holder.display(player);
     }
 
@@ -57,7 +58,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.MyViewHold
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                   //open session
+                    //open session
                     Session.setPlayer(currentPlayer);
                     Intent intent = new Intent(parent2, HomeSession.class);
                     parent2.startActivity(intent);
@@ -71,8 +72,8 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.MyViewHold
             name.setText(player.getNom());
             Bitmap bitmap = BitmapFactory.decodeByteArray(player.getImage_profil(), 0, player.getImage_profil().length);
             profil.setImageBitmap(bitmap.createScaledBitmap(bitmap, 20, 20, true));
-         //   bitmap.createScaledBitmap(bitmap,(int)(bitmap.getWidth()*0.5), (int)(bitmap.getHeight()*0.5), true);
-         //   profil.setImageBitmap(bitmap);
+            //   bitmap.createScaledBitmap(bitmap,(int)(bitmap.getWidth()*0.5), (int)(bitmap.getHeight()*0.5), true);
+            //   profil.setImageBitmap(bitmap);
         }
     }
 

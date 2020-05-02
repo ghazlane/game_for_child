@@ -36,7 +36,6 @@ public class PictureCamera extends AppCompatActivity {
         photoCamera = findViewById(R.id.imagePicture);
         photoCamera.setImageResource(R.drawable.level1_ballon);
         answer3 = findViewById(R.id.reponsechoix3_picture);
-        //Connexion with server
         photoCamera.setImageBitmap(PICTURE_BITMAP);
         answer3.setText("test");
         connectServer();
@@ -45,7 +44,6 @@ public class PictureCamera extends AppCompatActivity {
     void connectServer(){
 
         String postUrl= "http://192.168.1.3:5000/";
-
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inPreferredConfig = Bitmap.Config.RGB_565;

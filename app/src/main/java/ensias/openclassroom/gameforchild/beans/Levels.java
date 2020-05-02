@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class Levels extends AppCompatActivity {
 
-    private static ArrayList<Level> listLevel ;
-    private static int numLevels ;
-    private static int numQuestion ;
+    private static ArrayList<Level> listLevel;
+    private static int numLevels;
+    private static int numQuestion;
 
     public Levels() {
     }

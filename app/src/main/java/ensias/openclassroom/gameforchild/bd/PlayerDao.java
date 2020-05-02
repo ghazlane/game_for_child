@@ -13,14 +13,15 @@ import ensias.openclassroom.gameforchild.beans.Player;
 
 @Dao
 public interface PlayerDao {
-    @Insert(onConflict= OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     public void addPlayer(Player player);
-    /*@Query("select * from players where login = :login")
-    public List<User> getUser(String login);*/
+
     @Query("select * from player")
     public List<Player> getAllPlayer();
+
     @Delete
     public void deletePlayer(Player player);
+
     @Query("UPDATE player SET level = :level WHERE id = :id")
     int updatePlayer(int id, int level);
 }

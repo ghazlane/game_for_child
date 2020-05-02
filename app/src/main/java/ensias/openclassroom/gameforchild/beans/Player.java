@@ -12,22 +12,22 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "player")
 public class Player {
     //autoGenerate
-    @PrimaryKey(autoGenerate=true)
+    @PrimaryKey(autoGenerate = true)
     @NonNull
-    private int id ;
+    private int id;
     @ColumnInfo(name = "name_account")
-    private String nom ;
+    private String nom;
     @ColumnInfo(name = "level")
-    private int level ;
+    private int level;
     @ColumnInfo(name = "date_creation")
-    private String date_creation ;
+    private String date_creation;
     @ColumnInfo(name = "score")
-    private int score ;
+    private int score;
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    private byte[] image_profil ;
+    private byte[] image_profil;
 
 
-    public Player(){
+    public Player() {
         super();
     }
 
