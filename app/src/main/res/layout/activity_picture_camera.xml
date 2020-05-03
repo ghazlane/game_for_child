@@ -69,14 +69,15 @@
             android:text="Answer4"/>
 
         <Button
-            android:id="@+id/suivant"
+            android:id="@+id/suivant2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
             android:textColor="@color/colorPresuqeBlack"
+            android:background = "#3f00ff"
             android:textSize="20sp"
-            android:text="Valider réponse"
+            android:text="Next"
 
             />
     </LinearLayout>
