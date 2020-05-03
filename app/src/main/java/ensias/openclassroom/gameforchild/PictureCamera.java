@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -26,8 +28,26 @@ import okhttp3.Response;
 public class PictureCamera extends AppCompatActivity {
 
     private ImageView photoCamera;
-    public static Bitmap PICTURE_BITMAP ;
-    public TextView answer3 ;
+    public static Bitmap PICTURE_BITMAP;
+    public TextView answer3, answer4, answer2, answer1;
+    public final ArrayList<String> liste_choix = new ArrayList() {{
+        add("Glass");
+        add("Shirt");
+        add("window");
+        add("Bike");
+        add("Pen");
+        add("Hotem");
+        add("Silver");
+        add("window");
+        add("Computer");
+        add("Castle");
+        add("Egg");
+        add("Window");
+        add("Table");
+        add("Comb");
+        add("Glass");
+        add("Bike");
+    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +56,17 @@ public class PictureCamera extends AppCompatActivity {
         photoCamera = findViewById(R.id.imagePicture);
         photoCamera.setImageResource(R.drawable.level1_ballon);
         answer3 = findViewById(R.id.reponsechoix3_picture);
+        answer2 = findViewById(R.id.reponsechoix2_picture);
+        answer1 = findViewById(R.id.reponsechoix1_picture);
+        answer4 = findViewById(R.id.reponsechoix4_picture);
         photoCamera.setImageBitmap(PICTURE_BITMAP);
         answer3.setText("test");
         connectServer();
     }
 
-    void connectServer(){
+    void connectServer() {
 
-        String postUrl= "http://192.168.1.3:5000/";
+        String postUrl = "http://192.168.1.3:5000/";
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inPreferredConfig = Bitmap.Config.RGB_565;
@@ -57,6 +80,9 @@ public class PictureCamera extends AppCompatActivity {
                 .build();
 
         answer3.setText("Please wait ...");
+        answer1.setText("Please wait ...");
+        answer2.setText("Please wait ...");
+        answer4.setText("Please wait ...");
         postRequest(postUrl, postBodyImage);
     }
 
@@ -91,11 +117,35 @@ public class PictureCamera extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            answer3.setText(response.body().string());
+                            int lower = 1; int higher = 15;
+                            int secondheigher = 3 ;
+                            int random = (int)(Math.random() * (secondheigher-lower)) + lower;
+                            if (random == 0) {
+                                answer3.setText(response.body().string());
+                                answer4.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer2.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer1.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                            } else if (random == 1) {
+                                answer4.setText(response.body().string());
+                                answer3.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer2.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer1.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                            } else if (random == 2) {
+                                answer2.setText(response.body().string());
+                                answer4.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer3.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer1.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                            } else if (random == 3) {
+                                answer1.setText(response.body().string());
+                                answer4.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer2.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                                answer3.setText(liste_choix.get((int)(Math.random() * (higher-lower)) + lower));
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
+
                 });
             }
         });
