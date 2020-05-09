@@ -19,7 +19,7 @@
             android:textSize="20sp"
             android:padding="20dp"
             android:layout_gravity="center"
-            android:text="Liste du contenu"
+            android:text="Liste Of Accounts"
             />
 
         <androidx.recyclerview.widget.RecyclerView

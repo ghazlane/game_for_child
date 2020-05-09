@@ -9,10 +9,10 @@
         android:layout_height="match_parent"
         android:background="@drawable/background">
         <TextView
-            android:id="@+id/sin"
+            android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign In"
+            android:text="Sign Up"
             android:textSize="25dp"
             android:textColor="#54abee"
             android:gravity="center"
@@ -29,12 +29,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/signup"
-            android:text="Already have an account? Sign UP"
+            android:id="@+id/sin"
+            android:text="Already have an account? Sign In"
             android:textSize="16dp"
             android:textColor="#c4c5c9"
             android:gravity="center"
-            android:layout_above="@id/sin"
+            android:layout_above="@id/signup"
             android:paddingBottom="16dp"/>
         <LinearLayout
             android:id="@+id/circle"
